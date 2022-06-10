@@ -1,0 +1,13 @@
+.error {
+	/*color: #dc3232 !important;*/
+}
+
+.form-invalid input,
+.form-invalid input:focus,
+.form-invalid textarea,
+.form-invalid textarea:focus,
+.form-invalid select,
+.form-invalid select:focus {
+	border-color: #dc3232 !important;
+	box-shadow: 0 0 2px rgba(204, 0, 0, .8);
+}

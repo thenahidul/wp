@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SENT" />
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/colors.css" type="text/css" />
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<!-- Document Title
+	============================================= -->
+	<title>SENT | Send your files securely</title>
+	<link rel="SENT Icon" href="favicon.png" type="image/png">
+</head>
+
+<body class="stretched frontpage">
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+		<!-- Header
+		============================================= -->
+		<!-- 		<header id="header" class="transparent-header floating-header dark "> -->
+		<header id="header" class="transparent-header dark ">
+			<div id="header-wrap">
+				<div class="container clearfix">
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i>
+					</div>
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="SENT Logo">
+						</a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="SENT Logo">
+						</a>
+					</div>
+					<!-- #logo end -->
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+						<ul>
+							<li><a href="news.html"> News </a> </li>
+							<li><a href="faq.html"> FAQ </a> </li>
+							<li><a href="pricing.html"> Pricing </a> </li>
+							<li><a href="contact.html">Contact</a> </li>
+							<li><a href="https://app.sentandsecure.com/register"> Sign up </a> </li>
+							<li><a href="https://app.sentandsecure.com/account/login"> Login </a> </li>
+						</ul>
+					</nav>
+					<!-- #primary-menu end -->
+				</div>
+			</div>
+		</header>
+		<!-- #header end -->
+		<section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
+			<div class="swiper-container swiper-parent">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide dark" style="background-image: url('images/slider/swiper/1.jpg');">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-center">
+								<h2 data-caption-animate="fadeInUp">BE SAFE NOW.</h2>
+								<!-- 								<p data-caption-animate="fadeInUp" data-caption-delay="200">Any paragarah goes here</p> -->
+								<a href="https://app.sentandsecure.com/account/login" class="button button-border button-rounded button-light button-medium">Send Your File</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-caption-animate="fadeInUp" class="home-down-arrow">
+					<a href="#content" class="btn btn-circle page-scroll">
+                        <i class="icon-double-angle-down animated"></i>
+                     </a>
+				</div>
+			</div>
+			<script>
+			jQuery(document).ready(function($) {
+				var swiperSlider = new Swiper('.swiper-parent', {
+					paginationClickable: false,
+					slidesPerView: 1,
+					grabCursor: true,
+					onSwiperCreated: function(swiper) {
+						$('[data-caption-animate]').each(function() {
+							var $toAnimateElement = $(this);
+							var toAnimateDelay = $(this).attr('data-caption-delay');
+							var toAnimateDelayTime = 0;
+							if(toAnimateDelay) {
+								toAnimateDelayTime = Number(toAnimateDelay) + 750;
+							} else {
+								toAnimateDelayTime = 750;
+							}
+							if(!$toAnimateElement.hasClass('animated')) {
+								$toAnimateElement.addClass('not-animated');
+								var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+								setTimeout(function() {
+									$toAnimateElement.removeClass('not-animated').addClass(elementAnimation + ' animated');
+								}, toAnimateDelayTime);
+							}
+						});
+					},
+					onSlideChangeStart: function(swiper) {
+						$('#slide-number-current').html(swiper.activeIndex + 1);
+						$('[data-caption-animate]').each(function() {
+							var $toAnimateElement = $(this);
+							var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+							$toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+						});
+					},
+					onSlideChangeEnd: function(swiper) {
+						$('#slider .swiper-slide').each(function() {
+							if($(this).find('video').length > 0) {
+								$(this).find('video').get(0).pause();
+							}
+						});
+						$('#slider .swiper-slide:not(".swiper-slide-active")').each(function() {
+							if($(this).find('video').length > 0) {
+								if($(this).find('video').get(0).currentTime != 0) $(this).find('video').get(0).currentTime = 0;
+							}
+						});
+						if($('#slider .swiper-slide.swiper-slide-active').find('video').length > 0) {
+							$('#slider .swiper-slide.swiper-slide-active').find('video').get(0).play();
+						}
+						$('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function() {
+							var $toAnimateElement = $(this);
+							var toAnimateDelay = $(this).attr('data-caption-delay');
+							var toAnimateDelayTime = 0;
+							if(toAnimateDelay) {
+								toAnimateDelayTime = Number(toAnimateDelay) + 300;
+							} else {
+								toAnimateDelayTime = 300;
+							}
+							if(!$toAnimateElement.hasClass('animated')) {
+								$toAnimateElement.addClass('not-animated');
+								var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+								setTimeout(function() {
+									$toAnimateElement.removeClass('not-animated').addClass(elementAnimation + ' animated');
+								}, toAnimateDelayTime);
+							}
+						});
+					}
+				});
+				$('#slider-arrow-left').on('click', function(e) {
+					e.preventDefault();
+					swiperSlider.swipePrev();
+				});
+				$('#slider-arrow-right').on('click', function(e) {
+					e.preventDefault();
+					swiperSlider.swipeNext();
+				});
+				$('#slide-number-current').html(swiperSlider.activeIndex + 1);
+				$('#slide-number-total').html(swiperSlider.slides.length);
+			});
+			</script>
+		</section>
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="common-height dark" style="background-color:#192B3C; padding-top: 6px; padding-bottom: 85px;">
+				<div class="container clearfix">
+					<div class="heading-block center content-wrap" style="margin-bottom:-50px;">
+						<h2>IT's TIME FOR SENT</h2>
+					</div>
+					<div class="col_one_third nobottommargin">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+							</div>
+							<div class="fbox-desc">
+								<h3><span class="subtitle">Every time we put our social security or credit card numbers into an email, or send our tax documents to our attorney, or business plans to an associate, every time we use a virtual fax to receive our personal medical records--every moment that our private information is out there, there is someone looking to steal it. </span></h3> </div>
+						</div>
+					</div>
+					<div class="col_one_third nobottommargin">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+							</div>
+							<div class="fbox-desc">
+								<h3><span class="subtitle">It’s not isolated to breaches within huge organizations, it affects every individual and even the smallest of businesses. It’s not just identity theft, hackers also want to steal intellectual property, work product, help a competitor to take your clients, it’s endless. </span></h3> </div>
+						</div>
+					</div>
+					<div class="col_one_third nobottommargin col_last">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+							</div>
+							<div class="fbox-desc">
+								<h3><span class="subtitle">The more you neglect to send your files safely and the longer these vulnerable documents sit on unsecured server, out of your control, the more your risk increases exponentially. It’s about time your files were safe. It’s time for SENT.</span></h3> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="common-height" style="padding-top: 6px; padding-bottom: 10px;" id="how-sent-works">
+				<div class="container clearfix">
+					<div class="heading-block center content-wrap" style="margin-bottom:-50px;">
+						<h2>How SENT Works</h2> </div>
+					<div class="col_one_third nobottommargin">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+							</div>
+							<div class="fbox-desc">
+								<h3><span class="subtitle">Your files are uploaded from your computer to SENT servers using TLS. While the files are being processed, both your data at rest and metadata related to your file are encrypted using AES-256 encryption.</span></h3> </div>
+						</div>
+					</div>
+					<div class="col_one_third nobottommargin">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+							</div>
+							<div class="fbox-desc">
+								<h3><span class="subtitle">We use a hardened key management system with new keys issued for every file transfer. In addition, users have the option to further password protect any file transfer. </span></h3> </div>
+						</div>
+					</div>
+					<div class="col_one_third nobottommargin col_last">
+						<div class="feature-box media-box">
+							<div class="fbox-media">
+								<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+							</div>
+							<div class="fbox-desc">
+								<h3><span class="subtitle">Finally we mitigate the vulnerability of your file by limiting the amount of time that it is available for download, because the less time it's accessible, the safer it is.</span></h3> </div>
+						</div>
+					</div>
+
+					<div class="clear"></div>
+					<div class="howtovideo col-md-8 col-md-offset-2">
+						<video poster="/images/howitworksvideo.jpg" controls>
+							<source src="videos/howitworksvideo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<script>
+							document.querySelector('.howtovideo video').addEventListener('ended', function () {
+							   this.currentTime = 0;							   
+							})
+						</script>
+					</div>
+				</div>
+			</div>
+			<div class="content-wrap dark" style="background-color:#192B3C; padding-bottom: 10px; padding-top: 0px;">
+
+				<!-- TEST -->
+				<div class="common-height" style="">
+					<div class="container clearfix">
+						<div class="heading-block center content-wrap" style="margin-bottom: -50px;">
+							<h2>SENT Is Different</h2> </div>
+						<div class="col_one_fourth nobottommargin">
+							<div class="feature-box media-box">
+								<div class="fbox-media">
+									<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+								</div>
+								<div class="fbox-desc">
+									<h3><span class="subtitle"><strong>SENT is NOT a file storage or sharing site like DropBox.</strong> We enable encrypted file transfer to ensure that your important files are SENT and received safely. Files are hosted for a maximum of 5 days, then they are deleted from our server, so that only the sender and the recipient have possession of it.</span></h3> </div>
+							</div>
+						</div>
+						<div class="col_one_fourth nobottommargin">
+							<div class="feature-box media-box">
+								<div class="fbox-media">
+									<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+								</div>
+								<div class="fbox-desc">
+									<h3><span class="subtitle"><strong>Encrypted email solutions</strong> are cumbersome to use and can then reside, not only on the sender and intended recipient's computers, but on multiple email servers indefinitely. This creates a higher level of vulnerability in multiple locations. SENT keeps it simple so that your files stay secure. </span></h3> </div>
+							</div>
+						</div>
+						<div class="col_one_fourth nobottommargin">
+							<div class="feature-box media-box">
+								<div class="fbox-media">
+									<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+								</div>
+								<div class="fbox-desc">
+									<h3><span class="subtitle"><strong>Enterprise For Everyone.</strong> SENT is designed to give everyone the capability to send and receive files securely, like huge corporations do, without the cost or complications of large scale infrastructure. SENT makes enterprise-level security affordable and easy to use.</span></h3> </div>
+							</div>
+						</div>
+						<div class="col_one_fourth nobottommargin col_last">
+							<div class="feature-box media-box">
+								<div class="fbox-media">
+									<!-- 								<img src="images/services/1.jpg" alt="img"> -->
+								</div>
+								<div class="fbox-desc">
+									<h3><span class="subtitle"><strong>Pay for what you use.</strong> SENT is priced for small business and individuals. We are proud to offer Pay-As-You-Go options, subscriptions, as well as allow users to earn SENT Stamps that never expire. You can even give SENT Stamps to friends or colleagues to use. With SENT you will always have an option.</span></h3> </div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<!-- TEST -->
+			<a name="industry"></a>
+			<div class="common-height" style="padding-bottom: 15px;">
+				<div class="heading-block center content-wrap" style="margin-bottom:-50px;">
+					<h2>Sent-ify your industry</h2> </div>
+				<!-- 					<div class="col-md-4 dark col-padding ohidden" style="background-color: gray;"> -->
+				<div class="container clearfix">
+					<div class="toggle toggle-border col-md-3 dark ohidden ">
+						<div class="togglet"><i class="toggle-closed icon-line-circle-plus"></i><i class="toggle-open icon-line-circle-minus"></i>Accounting</div>
+						<div class="togglec">Whether your firm has one accountant or 200, whether you are preparing personal tax returns, managing business filings, or both, you need to safeguard the data entrusted to you. Client and employee...
+							<br /><a href="accounting.html">Learn More</a>
+						</div>
+					</div>
+					<div class="toggle toggle-border col-md-3 dark ohidden">
+						<div class="togglet"><i class="toggle-closed icon-line-circle-plus"></i><i class="toggle-open icon-line-circle-minus"></i>Law</div>
+						<div class="togglec">Your firm needs to send and receive documents from clients or colleagues and ensuring that the contents are secure is paramount. PII (personally identifiable Information), evidence, depositions...</br><a href="law.html" target="">Learn More</a>
+						</div>
+					</div>
+					<div class="toggle toggle-border col-md-3 dark ohidden">
+						<div class="togglet"><i class="toggle-closed icon-line-circle-plus"></i><i class="toggle-open icon-line-circle-minus"></i>Technology</div>
+						<div class="togglec">As a technology professional you know the value of securing user data, that includes personal data, passwords, logins, payment and credit card information. You are in the unique position to understand...</br><a href="technology.html" target="">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="container clearfix">
+					<div class="toggle toggle-border col-md-3 dark ohidden">
+						<div class="togglet"><i class="toggle-closed icon-line-circle-plus"></i><i class="toggle-open icon-line-circle-minus"></i>Manufacturing</div>
+						<div class="togglec">Whether you need to protect proprietary designs, recipes or processes from competitive infiltration, or need to protect employee, client, or trusted partner PII (personally identifiable Information) from...</br><a href="manufacturing.html" target="">Learn More</a>
+						</div>
+					</div>
+					<div class="toggle toggle-border col-md-3 dark ohidden">
+						<div class="togglet"><i class="toggle-closed icon-line-circle-plus"></i><i class="toggle-open icon-line-circle-minus"></i>Financial</div>
+						<div class="togglec">PII (Personally Identifiable Information) is essential when interacting with financial accounts, completing applications, or authenticating a user’s identity. In today’s virtual world, those data need to...</br><a href="financial.html" target="">Learn More</a>
+						</div>
+					</div>
+					<div class="toggle toggle-border col-md-3 dark ohidden">
+						<div class="togglet"><i class="toggle-closed icon-line-circle-plus"></i><i class="toggle-open icon-line-circle-minus"></i>Other Industries</div>
+						<div class="togglec">Within virtually every industry and every organization, sensitive data needs to be transported to get the job done. Whether it is sensitive business information or PII (personally identifiable information)...</br><a href="other.html" target="">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="section dark" style="background-color:#192B3C; ">
+				<div class="heading-block center  ">
+					<h2>What they're saying about SENT</h2> </div>
+				<div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
+					<div class="flexslider">
+						<div class="slider-wrap">
+							<div class="slide">
+								<div class="testi-image">
+									<a href="#"><img src="images/1.png" alt="Customer Testimonails">
+									</a>
+								</div>
+								<div class="testi-content">
+									<p>We have been desperate for a safe way to send and receive our clients' private tax information. This is awesome!</p>
+									<div class="testi-meta"> Lawrence F, Owner, LPF Accounting <span></span> </div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="testi-image">
+									<a href="#"><img src="images/3.png" alt="Customer Testimonails">
+									</a>
+								</div>
+								<div class="testi-content">
+									<p>Our engineers need to send designs to and from our clients, the files are huge and need to be secure. SENT is easier and safer than email and has no file size limitation. It is everything we need.</p>
+									<div class="testi-meta"> David M, Founder, ProSource Supply <span></span> </div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="testi-image">
+									<a href="#"><img src="images/2.png" alt="Customer Testimonails">
+									</a>
+								</div>
+								<div class="testi-content">
+									<p>We are technology consultants and it's our job to keep our clients' data safe. You can configure a dedicated VPN, or physically deliver a file to someone on a memory stick, or you can save all that time and money and just use SENT. </p>
+									<div class="testi-meta"> Michele M, Owner, Consul-vation, Inc. <span></span> </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</section>
+	<!-- #content end -->
+	<!-- Footer
+		============================================= -->
+	<footer id="footer" class="dark">
+		<!-- Copyrights
+			============================================= -->
+		<div id="copyrights">
+			<div class="container clearfix">
+				<div class="col_half"><script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script> &copy; The Secure Bucket, Inc. All Rights Reserved.
+					<br>
+					<div class="copyright-links"><a href="terms-of-use.html">Terms of Use</a> / <a href="privacy-policy.html">Privacy Policy</a> / <a href="careers.html">Careers</a>
+					</div>
+				</div>
+				<div class="col_half col_last tright">
+					<!-- 						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-yahoo">
+								<i class="icon-yahoo"></i>
+								<i class="icon-yahoo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div> -->
+					<div class="clear"></div>
+				</div>
+				<div class="col_half col_last tright">
+					<div class="fright clearfix">
+						<!-- 							<div class="copyrights-menu copyright-links nobottommargin">
+								<a href="index.html">Home</a>/<a href="about.html">About</a>/ <a href="mailto:jvirgolino@consulvation.com">Contact</a>
+							</div> --></div>
+				</div>
+			</div>
+		</div>
+		<!-- #copyrights end -->
+	</footer>
+	<!-- #footer end -->
+	</div>
+	<!-- #wrapper end -->
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script>
+		(function() {
+			jQuery('.page-scroll').click(function(event) {
+				var offset = jQuery('header').outerHeight();
+				jQuery('html, body').animate({
+					scrollTop: jQuery('#content').offset().top - offset
+				}, 900);
+				return false;
+			});
+			jQuery('.learnmore-btn').click(function(event) {
+				var offset = jQuery('header').outerHeight();
+				jQuery('html, body').animate({
+					scrollTop: jQuery('#how-sent-works').offset().top - offset
+				}, 900);
+				return false;
+			});
+		})(jQuery);
+	</script>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-94024100-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</body>
+</html>

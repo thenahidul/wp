@@ -1,0 +1,233 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+#grand_mere {
+	min-height: 500px;
+}
+#grand_mere h1 {
+	font-family: 'Lato', sans-serif;
+	color: #003B89;
+	font-weight: bold;
+}
+#grand_mere h2 {
+	font-family: 'Lato', sans-serif;
+	color: #003B89;
+}
+#grand_mere h3 {
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+	color: #003B89;
+}
+#grand_mere p {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: #003B89;
+}
+#grand_mere a.cta,
+#grand_mere a.cta_blue {
+	font-family: 'Lato', sans-serif;
+	background: #ffffff;
+	font-size: 10pt;
+	line-height: 32pt;
+	text-transform: uppercase;
+	color: #003B89;
+	font-weight: 900;
+	padding: 20px;
+	border-bottom: 3px solid #C8974E;
+}
+#grand_mere a.cta_blue {
+	background: #003B89;
+	color: #ffffff;
+	font-size: 10px;
+}
+@media (min-width: 768px){
+	#grand_mere a.cta {
+		font-size: 16px;
+	}
+	#grand_mere a.cta_blue {
+		font-size: 16px;
+	}
+}
+#grand_mere a.cta:hover,
+#grand_mere a.cta_blue:hover {
+	text-decoration: none;
+}
+#grand_mere #banner_header h1 span {
+	font-weight: normal;
+}
+#grand_mere #banner_header {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom: solid 3px #C8974E;
+	text-align: center;
+}
+@media (min-width: 768px){
+	#grand_mere #banner_header {
+		text-align: left;
+	}
+}
+@media (max-width: 767px){
+	#grand_mere #banner_header {
+		background: url('/Modules/grandmere/images/mobile_homepage.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+#grand_mere #banner_header,
+#grand_mere #section_2,
+#grand_mere #section_3 {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#grand_mere #banner_two {
+	background-position: top center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+#grand_mere #banner_two img {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+@media (min-width: 1900px){
+	#grand_mere #banner_two {
+		background-size: cover;
+	}
+}
+#grand_mere #banner_header .header_content {
+	display: flex;
+	align-items: center;
+}
+#grand_mere #section_1 {
+	text-align: center;
+	padding-bottom: 50px;
+}
+#grand_mere #section_1 .article {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+#grand_mere #making_pasta_banner {
+	width: 100%;
+}
+#grand_mere #banner_two p {
+	font-size: 25px;
+	margin-bottom: 50px;
+}
+#grand_mere #section_1 img {
+	margin: auto;
+	margin-bottom: 25px;
+}
+#grand_mere #section_2 {
+	background: #f7f7f7;
+	text-align: center;
+	position: relative;
+}
+#grand_mere #section_2 h2 {
+	color: #C8974E;
+	margin-bottom: 25px;
+}
+#grand_mere #section_2 p {
+	font-size: 22px;
+}
+#grand_mere #section_2 img {
+	height: 400px;
+}
+#grand_mere #section_2 .image_container {
+	position: relative;
+}
+@media (min-width: 992px){
+	#grand_mere #section_2 img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+}
+#grand_mere #section_3 h2 {
+	margin-bottom: 50px;
+}
+#grand_mere #section_3 img {
+	max-height: 250px;
+	margin-bottom: 15px;
+}
+#grand_mere #section_3 .cta_container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+#grand_mere #section_3 #noodles {
+	margin-top: 75px;
+}
+#grand_mere #section_3 {
+	text-align: center;
+}
+.default_image:hover,
+.hover_image:hover {
+	cursor: pointer;
+}
+@keyframes slideLeft {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+#slide_left.start {
+	animation: 1s ease-out 0s 1 slideLeft;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+@keyframes slideUp {
+	from {
+		transform: translateY(0);
+	} 
+	to {
+		opacity: 1;
+		transform: translateY(30%);
+	}
+}
+#slide_up.start {
+	animation: 1s ease-out 0s 1 slideUp;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+@keyframes slideUpButton {
+	from {
+		transform: translateY(50%);
+	} 
+	to {
+		opacity: 1;
+		transform: translateY(100%);
+	}
+}
+#grand_mere .slide_up_button_animation {
+	height: 94px;
+}
+@media (max-width: 768px){
+	#grand_mere .slide_up_button_animation {
+		margin-bottom: 25px;
+	}
+}
+#slide_up_button.start {
+	animation: 1s ease-out 0s 1 slideUpButton;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(25%);
+	}
+}
+#slide_down.start {
+	animation: 1s ease-out 0s 1 slideDown;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}

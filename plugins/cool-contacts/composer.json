@@ -1,0 +1,22 @@
+{
+	"name": "nahid/cool-contact",
+	"description": "This plugin allows to add contact list in the backend. List can be sorted by different criteria as well.",
+	"type": "wordpress-plugin",
+	"license": "GPLv2",
+	"authors": [
+		{
+			"name": "thenahid",
+			"email": "nahiddhaka07@gmail.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Cool\\Contact\\": "inc"
+		},
+		"files": [
+			"inc/functions.php"
+		]
+	}
+}
